@@ -1,2 +1,16 @@
 <h1><marquee>Hello World</marquee></h1>
-<router-outlet></router-outlet>
+{{title}}
+
+{{func()}}
+
+<button (click)="fcheck(title)">Click Here for Magic</button> <!-- Tille will be fetched from component.ts -->
+<br>
+<h3>My name is {{obj.name}} and my age is {{obj.age}}.</h3>
+<h3>{{arr[1]}}</h3>
+<h3>{{a+b}}</h3> 
+<h3>{{variable}}</h3>
+<!-- <router-outlet></router-outlet> -->
+<app-user-list></app-user-list>
+
+<app-login></app-login>
+<app-signup></app-signup>
