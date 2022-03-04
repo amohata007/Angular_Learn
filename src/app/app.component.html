@@ -9,6 +9,79 @@
 <h3>{{arr[1]}}</h3>
 <h3>{{a+b}}</h3> 
 <h3>{{variable}}</h3>
+<input type="text" (keyup)="printval($any($event.target).value)" />
+<h2>{{currval}}</h2>   
+
+<input type="text" disabled="{{xyz}}" value={{title}}>  <!--Interpolation-->
+<br><br>
+<input type="text" [disabled]="xyz" [value]="title"> <!--Property Binding-->
+<br><br>
+<button (click)="checkdiff()">Submit</button>
+
+
+<!-- If else condition -->
+<!-- If string then "xyz=='yes'" -->
+<h2 *ngIf="xyz else elsepart">
+    If condition executed
+</h2>
+
+<ng-template #elsepart>
+<h2>I'm Else Part.</h2>
+</ng-template>
+
+
+<!-- Multiple if else conditions -->
+<ng-template [ngIf]="color=='red'">
+    <h2 style="color:red;">I'm Red</h2>
+</ng-template>
+<ng-template [ngIf]="color=='blue'">
+    <h2 style="color:blue;">I'm Blue</h2>
+</ng-template>
+<ng-template [ngIf]="color=='green'">
+    <h2 style="color:green;">I'm Green</h2>
+</ng-template>
+
+<h1 *ngIf="num%2==0 else Oddpart">
+    "I'm Even number."
+</h1>
+<ng-template #Oddpart>
+    <h1>I'm Odd number.</h1>
+</ng-template>
+
+
+
+<!-- Use of For Loop -->
+<table border="1">
+<tr>
+    <th>NAME</th>
+    <th>AGE</th>
+    <th>MAIL</th>
+</tr>
+<tr *ngFor="let i of myarray.slice(0,4)">
+    <td>{{i.name}}</td>
+    <td>{{i.age}}</td>
+    <td>{{i.mail}}</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <router-outlet></router-outlet> -->
 <app-user-list></app-user-list>
 
