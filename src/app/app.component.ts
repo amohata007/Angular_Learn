@@ -63,4 +63,7 @@ export class AppComponent {
       mail: 'lakshya.mohata@gmail.com'
     }
   ];
+  getvalues(val){
+    console.warn(val)
+  }
 }
