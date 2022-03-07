@@ -35,6 +35,10 @@ export class AppComponent {
   color = 'blue';
   num = 2321;
 
+  mystr = "hello charLiE";
+  today = Date.now();
+  curr = 100;
+
   myarray = 
   [
     {
