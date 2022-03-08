@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { reduce } from 'rxjs';
+import {UserDataService} from './user-data.service'
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,22 @@ import { reduce } from 'rxjs';
 })
 export class AppComponent {
   title = 'firstproject';
+  // varname='';
+  // constructor(private user:UserDataService)
+  // {
+  //   console.warn(this.user.getData())
+  //   let data = this.user.getData();
+  //   this.varname=data.name
+  // }
+  mydata:any;
+  constructor(private user:UserDataService)
+  {
+    this.user.getApiData().subscribe(data=>{
+      // console.warn(mydata) 
+      this.mydata=data
+    })
+  }
+
   currval='';
   func(){
     return this.title
