@@ -2,6 +2,13 @@ import { Component } from '@angular/core';
 import { reduce } from 'rxjs';
 import {UserDataService} from './user-data.service'
 
+interface datatype{
+  name:string,
+  age:number,
+  indian:boolean,
+  address:any
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +16,18 @@ import {UserDataService} from './user-data.service'
 })
 export class AppComponent {
   title = 'firstproject';
+  // using model
+  modelcheck(){
+    const data:datatype={
+      name:"Abhishek Mohata",
+      age:25,
+      indian:true,
+      address:"202,Surat"
+    }
+    return data;
+  }
+
+
   // varname='';
   // constructor(private user:UserDataService)
   // {
